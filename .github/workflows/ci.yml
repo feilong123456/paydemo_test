@@ -1,0 +1,31 @@
+name: CI Demo
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 拉代码
+        uses: actions/checkout@v4
+
+      - name: 安装 PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+
+      # ✅ 1. 语法检查（拦错）
+      - name: PHP 语法检查
+        run: php -l index.php
+
+      # ✅ 2. 最小验证
+      - name: 运行代码
+        run: php index.php
+
+      # ✅ 3. 构建 Docker（交付物）
+      - name: 构建镜像
+        run: |
+          SHORT_SHA=$(echo $GITHUB_SHA | cut -c1-7)
+          docker build -t angel-demo:${SHORT_SHA} .

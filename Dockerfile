@@ -1,6 +1,8 @@
-FROM php:8.2-cli
+FROM php:8.2-fpm
 
-WORKDIR /app
+RUN docker-php-ext-install mysqli
+
+WORKDIR /var/www/html
 COPY . .
 
-CMD ["php", "index.php"]
+CMD ["php-fpm"]

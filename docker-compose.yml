@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: angel_app
+    volumes:
+      - .:/var/www/html
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASS=root
+      - DB_NAME=angel
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:alpine
+    container_name: angel_nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - app
+
+  db:
+    image: mysql:8
+    container_name: angel_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: angel
+    volumes:
+      - mysql_data:/var/lib/mysql   # ⭐持久化关键！
+
+volumes:
+  mysql_data:

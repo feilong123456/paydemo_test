@@ -1,0 +1,1 @@
+ALTER TABLE kao_admin ADD COLUMN userkey VARCHAR(255) COMMENT '用户userkey';

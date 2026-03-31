@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'Id'              => '编号',
+    'Tuisongtime'     => '系统机器人推送时间',
+    'Choukatime'      => '系统分配的抽卡时间',
+    'Chouendtime'     => '系统分配最晚打卡的抽卡时间',
+    'Admin_id'        => '员工名称',
+    'Dakatime'        => '打卡时间',
+    'Dakalist'        => '打卡方式',
+    'Dakalist 0'      => 'TG',
+    'Dakalist 1'      => 'Web',
+    'Dakalist 2'      => '未定义',
+    'Year'            => '年',
+    'Month'           => '月',
+    'Day'             => '日',
+    'Jilunlist'       => '第几轮',
+    'Jilunlist 1'     => '第一轮',
+    'Jilunlist 2'     => '第二轮',
+    'Jilunlist 3'     => '第三轮',
+    'Jilunlist 4'     => '第四轮',
+    'Dijige'          => '第几次抽查',
+    'Token'           => '随机字符串',
+    'Statuslist'      => '状态',
+    'Statuslist 0'    => '未打卡',
+    'Statuslist 1'    => '正常打卡',
+    'Statuslist 2'    => '已迟到',
+    'Istuisonglist'   => '推送状态',
+    'Istuisonglist 0' => '未推送',
+    'Istuisonglist 1' => '已推送'
+];

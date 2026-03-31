@@ -1,0 +1,30 @@
+<?php
+
+return [
+    'Id'            => '编号',
+    'Name'          => '班次名称',
+    'Typelist'      => '考勤类型',
+    'Typelist 0'    => '固定班次(每天考勤时间一样)',
+    'Typelist 1'    => '弹性班次(按照排版自定义考勤时间)',
+    'Worktime'      => '工作时间',
+    'Starttime'     => '开始工作时间',
+    'Endtime'       => '结束工作时间',
+    'Startbefore'   => '最早打卡时间(提前多少分钟)',
+    'Endbefore'     => '最晚打卡时间(延后多少分钟)',
+    'Typedata'      => '抽查时间与工作时间是否保持一致',
+    'Typedata 0'    => '否',
+    'Typedata 1'    => '是',
+    'Reststarttime' => '休息开始时间',
+    'Restendtime'   => '休息结束时间',
+    'Startmiss'     => '迟到多少时间打卡不算迟到',
+    'Endmiss'       => '早退多少时间打卡不算早退',
+    'Startbelate'   => '迟到多少时间打卡视为缺勤',
+    'Endlate'       => '早退多少时间打卡视为早退',
+    'Timedraw'      => '抽查打卡多少超过多少时间算缺勤',
+    'Createtime'    => '创建时间',
+    'Updatetime'    => '修改时间',
+    'Onechou'       => '6点-12点 抽卡',
+    'Twochou'       => '12点-18点 抽卡',
+    'Threechou'     => '18点=24点 抽卡',
+    'Fourchou'      => '24点-6点 抽卡'
+];

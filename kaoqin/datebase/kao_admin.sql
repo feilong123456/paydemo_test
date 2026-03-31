@@ -1,0 +1,22 @@
+CREATE TABLE `kao_admin` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `username` varchar(20) DEFAULT '' COMMENT '用户名',
+  `nickname` varchar(50) DEFAULT '' COMMENT '昵称',
+  `password` varchar(32) DEFAULT '' COMMENT '密码',
+  `salt` varchar(30) DEFAULT '' COMMENT '密码盐',
+  `avatar` varchar(255) DEFAULT '' COMMENT '头像',
+  `email` varchar(100) DEFAULT '' COMMENT '电子邮箱',
+  `mobile` varchar(11) DEFAULT '' COMMENT '手机号码',
+  `loginfailure` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '失败次数',
+  `logintime` bigint(16) DEFAULT NULL COMMENT '登录时间',
+  `loginip` varchar(50) DEFAULT NULL COMMENT '登录IP',
+  `createtime` bigint(16) DEFAULT NULL COMMENT '创建时间',
+  `updatetime` bigint(16) DEFAULT NULL COMMENT '更新时间',
+  `token` varchar(59) DEFAULT '' COMMENT 'Session标识',
+  `status` varchar(30) NOT NULL DEFAULT 'normal' COMMENT '状态',
+  `chatid` varchar(255) DEFAULT NULL COMMENT '用户的tg中chatid',
+  `typedata` enum('0','1','2') DEFAULT '0' COMMENT '打卡方式:0=tg,1=web,2=两者均可',
+  `choukadata` enum('0','1','2') DEFAULT '0' COMMENT '抽卡方式:0=tg,1=web,2=两者均可',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='管理员表';

@@ -1,0 +1,25 @@
+# 忽略日志文件
+*.log
+
+# 保留空目录
+!.gitkeep
+
+# 忽略其他可能的配置文件
+composer.lock
+.user.ini
+
+# 忽略日志、缓存文件和临时文件
+/runtime/*
+!runtime/.gitignore  # 保留目录结构
+
+# 忽略用户上传文件
+/public/uploads/*
+!public/uploads/.gitignore  # 保留目录结构
+
+# 数据库配置文件
+.env
+.idea
+
+# 忽略.skeema文件
+.skeema
+

@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   app:
-    build: .
+    image: feilong123456/angel-demo:latest
     container_name: angel_app
     volumes:
       - .:/var/www/html

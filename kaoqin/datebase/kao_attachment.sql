@@ -1,0 +1,21 @@
+CREATE TABLE `kao_attachment` (
+  `id` int(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `category` varchar(50) DEFAULT '' COMMENT '类别',
+  `admin_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '管理员ID',
+  `user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '会员ID',
+  `url` varchar(255) DEFAULT '' COMMENT '物理路径',
+  `imagewidth` varchar(30) DEFAULT '' COMMENT '宽度',
+  `imageheight` varchar(30) DEFAULT '' COMMENT '高度',
+  `imagetype` varchar(30) DEFAULT '' COMMENT '图片类型',
+  `imageframes` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '图片帧数',
+  `filename` varchar(100) DEFAULT '' COMMENT '文件名称',
+  `filesize` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '文件大小',
+  `mimetype` varchar(100) DEFAULT '' COMMENT 'mime类型',
+  `extparam` varchar(255) DEFAULT '' COMMENT '透传数据',
+  `createtime` bigint(16) DEFAULT NULL COMMENT '创建日期',
+  `updatetime` bigint(16) DEFAULT NULL COMMENT '更新时间',
+  `uploadtime` bigint(16) DEFAULT NULL COMMENT '上传时间',
+  `storage` varchar(100) NOT NULL DEFAULT 'local' COMMENT '存储位置',
+  `sha1` varchar(40) DEFAULT '' COMMENT '文件 sha1编码',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='附件表';

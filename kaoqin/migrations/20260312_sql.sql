@@ -1,0 +1,3 @@
+ALTER TABLE `kao_admin`
+    MODIFY COLUMN `teams_tenant_id` VARCHAR(512) DEFAULT NULL COMMENT 'Teams 租户ID',
+    MODIFY COLUMN `teams_user_id`   VARCHAR(512) DEFAULT NULL COMMENT '';

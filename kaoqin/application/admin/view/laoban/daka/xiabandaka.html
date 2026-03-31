@@ -1,0 +1,25 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+   
+     <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">打卡类型:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-year" data-rule="required" class="form-control" name="" type="" value="下班打卡" readonly="readonly" >
+        </div>
+    </div>
+     <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">打卡时间:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-year" data-rule="required" class="form-control" name="" type="" value="{$dakatime}" readonly="readonly">
+        </div>
+    </div>
+ 
+
+    <div class="form-group layer-footer">
+        <input type="hidden" name="row[typelist]" id="" value="2" />
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed ">确定打卡</button>
+        </div>
+    </div>
+</form>

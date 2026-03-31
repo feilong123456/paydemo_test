@@ -1,0 +1,111 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Tuisongtime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-tuisongtime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[tuisongtime]" type="text" value="{:$row.tuisongtime?datetime($row.tuisongtime):''}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Choukatime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-choukatime" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[choukatime]" type="text" value="{:$row.choukatime?datetime($row.choukatime):''}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Chouendtime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-chouendtime" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[chouendtime]" type="text" value="{:$row.chouendtime?datetime($row.chouendtime):''}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Dakatime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-dakatime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[dakatime]" type="text" value="{:$row.dakatime?datetime($row.dakatime):''}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Dakalist')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-dakalist" class="form-control selectpicker" name="row[dakalist]">
+                {foreach name="dakalistList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.dakalist"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Year')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-year" class="form-control" name="row[year]" type="number" value="{$row.year|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Month')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-month" class="form-control" name="row[month]" type="number" value="{$row.month|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Day')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-day" class="form-control" name="row[day]" type="number" value="{$row.day|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Jilunlist')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-jilunlist" class="form-control selectpicker" name="row[jilunlist]">
+                {foreach name="jilunlistList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.jilunlist"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Dijige')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-dijige" class="form-control" name="row[dijige]" type="number" value="{$row.dijige|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Token')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-token" class="form-control" name="row[token]" type="text" value="{$row.token|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Statuslist')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-statuslist" class="form-control selectpicker" name="row[statuslist]">
+                {foreach name="statuslistList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.statuslist"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Istuisonglist')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-istuisonglist" class="form-control selectpicker" name="row[istuisonglist]">
+                {foreach name="istuisonglistList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.istuisonglist"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>

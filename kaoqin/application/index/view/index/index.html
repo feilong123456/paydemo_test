@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>员工打卡</title>
+    <link rel="shortcut icon" href="__CDN__/assets/img/favicon.ico"/>
+    <link href="__CDN__/assets/css/index.css" rel="stylesheet">
+    <link href="__CDN__/assets/css/backend{$Think.config.app_debug?'':'.min'}.css?v={$Think.config.site.version}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+
+<div id="mainbody">
+    <div class="container">
+        <div class="text-center">
+            <h1>员工抽查打卡</h1>
+            <h2>{$dakatime}</h2>
+            <div class="col-xs-12 col-sm-12">
+                <button class="btn btn-primary" onclick="chouka('{$choukaid}','{$token}')">立即打抽查卡</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <p>Copyright @ {$site.name|htmlentities} {:date('Y',time())} 版权所有 <a href="https://beian.miit.gov.cn" target="_blank">{$site.beian|htmlentities}</a></p>
+    </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+    function chouka(choukaid,token){
+        //这里再去做一次判断：
+         $.ajax({
+                url: '/api/user/apidaka', // 服务器端的路径
+                type: 'POST', // 请求方法
+                dataType: 'json', // 期望从服务器返回的数据类型
+                data:{'choukaid':choukaid,'token':token},
+                success: function(datas) {
+                    console.log(datas);
+                    // 请求成功，在这里处理返回的数据
+                    alert(datas.msg);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    // 请求失败的处理
+                   alert("网络繁忙");
+                }
+            });
+    }
+</script>
+</body>
+
+</html>

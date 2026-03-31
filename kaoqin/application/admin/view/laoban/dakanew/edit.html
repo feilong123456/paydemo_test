@@ -1,0 +1,63 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Dakatime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-dakatime" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[dakatime]" type="text" value="{:$row.dakatime?datetime($row.dakatime):''}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Typelist')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-typelist" data-rule="required" class="form-control selectpicker" name="row[typelist]">
+                {foreach name="typelistList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.typelist"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Year')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-year" data-rule="required" class="form-control" name="row[year]" type="number" value="{$row.year|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Month')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-month" data-rule="required" class="form-control" name="row[month]" type="number" value="{$row.month|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Ischidao')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-ischidao" data-rule="required" class="form-control selectpicker" name="row[ischidao]">
+                {foreach name="ischidaoList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.ischidao"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Iszaotui')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-iszaotui" data-rule="required" class="form-control selectpicker" name="row[iszaotui]">
+                {foreach name="iszaotuiList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.iszaotui"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>

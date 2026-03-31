@@ -1,4 +1,4 @@
-FROM php:8.2-fpm
+FROM php:7.4-fpm
 
 # FastAdmin 常用数据库扩展
 RUN docker-php-ext-install mysqli pdo pdo_mysql

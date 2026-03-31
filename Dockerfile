@@ -1,7 +1,14 @@
 FROM php:7.4-fpm
 
-# FastAdmin 常用数据库扩展
-RUN docker-php-ext-install mysqli pdo pdo_mysql
+# FastAdmin 常用扩展（数据库 + 验证码GD）
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+       libfreetype6-dev \
+       libjpeg62-turbo-dev \
+       libpng-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install mysqli pdo pdo_mysql gd \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www/html/kaoqin
 
